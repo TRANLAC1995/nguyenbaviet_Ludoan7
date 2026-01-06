@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hiến pháp & Pháp luật cơ bản</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial,sans-serif;background:#f0f8ff;padding:20px;}
+header{
+  background:rgba(255,255,255,.9);
+  padding:15px;
+  text-align:center;
+  border-radius:0 0 20px 20px;
+  box-shadow:0 4px 10px rgba(0,0,0,.3);
+}
+header h1{color:#007bff;margin-bottom:10px;}
+header button{
+  margin:3px;padding:8px 12px;border:none;border-radius:8px;
+  cursor:pointer;background:#1e3c72;color:#fff;
+}
+section{max-width:900px;margin:30px auto;}
+button.back{
+  background:#1e3c72;color:#fff;border:none;border-radius:10px;
+  padding:10px 15px;cursor:pointer;margin-bottom:20px;
+}
+
+.accordion-item{
+  background:rgba(255,255,255,0.75);
+  margin-bottom:10px;
+  border-radius:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+.accordion-header{
+  padding:15px 20px;
+  cursor:pointer;
+  font-weight:bold;
+  color:#1e3c72;
+}
+.accordion-content{
+  display:none;
+  padding:10px 20px 15px;
+  line-height:1.6;
+}
+.accordion-content ul{margin-left:20px;}
+.accordion-content li{margin-bottom:6px;}
+
+.editable[contenteditable="true"]{
+  outline:2px dashed red;
+  background:#fff8c6;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1 class="editable" data-key="title-main">Xử lý tình hình huống nguy hiểm</h1>
+  <button onclick="adminLogin()">🔐 Quản trị</button>
+  <button id="editBtn" onclick="toggleEdit()" style="display:none">✏️ Chỉnh sửa</button>
+  <button id="saveBtn" onclick="saveContent()" style="display:none">💾 Lưu</button>
+  <button id="logoutBtn" onclick="logoutAdmin()" style="display:none">🚪 Thoát</button>
+</header>
+
+<section>
+<a href="index.html"><button class="back">⏪ Quay lại</button></a>
+
+<!-- ===== MỤC 1 ===== -->
+<div class="accordion-item">
+  <div class="accordion-header" onclick="toggleContent(this)">
+    <span class="editable" data-key="m1-title">1. Mục đích, yêu cầu xử lý tình huống nguy hiểm của công binh 🎯</span>
+  </div>
+  <div class="accordion-content editable" data-key="m1-content">
+    <ul>
+      <li>Bảo đảm an toàn tuyệt đối cho quân nhân, phương tiện và công trình.</li>
+      <li>Ngăn chặn nguy cơ nổ, cháy hoặc sụp đổ khi xử lý vật liệu nổ, bom mìn.</li>
+      <li>Đảm bảo tiến độ và hiệu quả nhiệm vụ công binh, đặc biệt trong khai thác và xây dựng quốc phòng.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== MỤC 2 ===== -->
+<div class="accordion-item">
+  <div class="accordion-header" onclick="toggleContent(this)">
+    <span class="editable" data-key="m2-title">2. Nguyên tắc cơ bản trong xử lý tình huống ⚠️</span>
+  </div>
+  <div class="accordion-content editable" data-key="m2-content">
+    <ul>
+      <li>An toàn tính mạng và sức khỏe của quân nhân được đặt lên hàng đầu.</li>
+      <li>Tuân thủ nghiêm ngặt quy trình rà phá, di dời, xử lý vật liệu nổ.</li>
+      <li>Chỉ thực hiện nhiệm vụ khi có kế hoạch và sự cho phép của chỉ huy.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== MỤC 3 ===== -->
+<div class="accordion-item">
+  <div class="accordion-header" onclick="toggleContent(this)">
+    <span class="editable" data-key="m3-title">3. Chuẩn bị lực lượng và trang bị 👷‍♂️</span>
+  </div>
+  <div class="accordion-content editable" data-key="m3-content">
+    <ul>
+      <li>Chỉ quân nhân được đào tạo chuyên môn, huấn luyện an toàn mìn nổ.</li>
+      <li>Trang bị bảo hộ cá nhân đầy đủ: mũ, áo giáp, găng tay chống nổ, giày chuyên dụng.</li>
+      <li>Chuẩn bị phương tiện cứu nạn, sơ cứu và thiết bị phát hiện nổ mìn.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== MỤC 4 ===== -->
+<div class="accordion-item">
+  <div class="accordion-header" onclick="toggleContent(this)">
+    <span class="editable" data-key="m4-title">4. Nhận diện và đánh giá nguy cơ 💣</span>
+  </div>
+  <div class="accordion-content editable" data-key="m4-content">
+    <ul>
+      <li>Đánh giá loại, số lượng và tình trạng bom, mìn, vật liệu nổ còn sót lại.</li>
+      <li>Xác định khu vực nguy hiểm và phạm vi ảnh hưởng.</li>
+      <li>Lập phương án hành động dựa trên mức độ rủi ro.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== MỤC 5 ===== -->
+<div class="accordion-item">
+  <div class="accordion-header" onclick="toggleContent(this)">
+    <span class="editable" data-key="m5-title">5. Tổ chức khu vực và bảo vệ an toàn 🚧</span>
+  </div>
+  <div class="accordion-content editable" data-key="m5-content">
+    <ul>
+      <li>Khu vực làm nhiệm vụ phải được khoanh vùng, cắm mốc, đặt biển báo cảnh báo.</li>
+      <li>Ngăn chặn mọi người không có nhiệm vụ tiếp cận khu vực nguy hiểm.</li>
+      <li>Bố trí lực lượng cảnh giới và giám sát chặt chẽ mọi hoạt động.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== MỤC 6 ===== -->
+<div class="accordion-item">
+  <div class="accordion-header" onclick="toggleContent(this)">
+    <span class="editable" data-key="m6-title">6. Quy trình phát hiện, xử lý và hủy nổ 🔍</span>
+  </div>
+  <div class="accordion-content editable" data-key="m6-content">
+    <ul>
+      <li>Sử dụng thiết bị dò tìm, định vị bom mìn và vật liệu nổ.</li>
+      <li>Đánh dấu vị trí, xác định loại và phương pháp xử lý an toàn.</li>
+      <li>Hủy nổ theo kế hoạch, đảm bảo khoảng cách an toàn tuyệt đối.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== MỤC 7 ===== -->
+<div class="accordion-item">
+  <div class="accordion-header" onclick="toggleContent(this)">
+    <span class="editable" data-key="m7-title">7. Phòng ngừa tai nạn và sự cố 🚨</span>
+  </div>
+  <div class="accordion-content editable" data-key="m7-content">
+    <ul>
+      <li>Không chủ quan, tuân thủ tuyệt đối các quy định an toàn.</li>
+      <li>Thường xuyên kiểm tra trang bị, dụng cụ trước khi sử dụng.</li>
+      <li>Dừng mọi hoạt động khi xuất hiện dấu hiệu nguy hiểm.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== MỤC 8 ===== -->
+<div class="accordion-item">
+  <div class="accordion-header" onclick="toggleContent(this)">
+    <span class="editable" data-key="m8-title">8. Công tác chỉ huy và giám sát 👨‍✈️</span>
+  </div>
+  <div class="accordion-content editable" data-key="m8-content">
+    <ul>
+      <li>Chỉ huy chịu trách nhiệm toàn diện về an toàn và hiệu quả xử lý.</li>
+      <li>Giám sát từng bước, từng cá nhân trong quá trình thao tác.</li>
+      <li>Điều chỉnh, chấn chỉnh sai phạm ngay lập tức.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== MỤC 9 ===== -->
+<div class="accordion-item">
+  <div class="accordion-header" onclick="toggleContent(this)">
+    <span class="editable" data-key="m9-title">9. Xử lý sự cố và cứu hộ kịp thời 🚑</span>
+  </div>
+  <div class="accordion-content editable" data-key="m9-content">
+    <ul>
+      <li>Dừng ngay công việc khi xảy ra sự cố nguy hiểm.</li>
+      <li>Tổ chức cứu hộ, sơ cứu, di chuyển người bị nạn an toàn.</li>
+      <li>Báo cáo cấp trên và ghi nhận toàn bộ diễn biến sự cố.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== MỤC 10 ===== -->
+<div class="accordion-item">
+  <div class="accordion-header" onclick="toggleContent(this)">
+    <span class="editable" data-key="m10-title">10. Trách nhiệm và xử lý vi phạm 🛡️</span>
+  </div>
+  <div class="accordion-content editable" data-key="m10-content">
+    <ul>
+      <li>Mỗi cá nhân chịu trách nhiệm về an toàn của bản thân.</li>
+      <li>Chỉ huy chịu trách nhiệm toàn bộ hoạt động của đơn vị.</li>
+      <li>Xử lý nghiêm các hành vi vi phạm quy trình xử lý tình huống nguy hiểm.</li>
+    </ul>
+  </div>
+</div>
+
+
+
+</section>
+
+<script>
+const ADMIN_PASSWORD="100";
+let isAdmin=false;
+const SCRIPT_URL="https://script.google.com/macros/s/AKfycbwZzZWKth5mSJZW7T1W0VL4Ma0jQtxTyql5zX15x13INeb3l4JCO909Oo2FX9nWJfl67g/exec";
+
+function toggleContent(h){
+  const c=h.nextElementSibling;
+  c.style.display=c.style.display==="block"?"none":"block";
+}
+
+function adminLogin(){
+  if(prompt("Nhập mật khẩu quản trị:")===ADMIN_PASSWORD){
+    isAdmin=true;
+    editBtn.style.display=saveBtn.style.display=logoutBtn.style.display="inline-block";
+  }
+}
+
+function toggleEdit(){
+  if(!isAdmin) return;
+  document.querySelectorAll(".editable").forEach(e=>{
+    e.contentEditable=e.contentEditable!=="true";
+  });
+}
+
+async function saveContent(){
+  const data={};
+  document.querySelectorAll(".editable").forEach(e=>data[e.dataset.key]=e.innerHTML);
+  await fetch(SCRIPT_URL,{method:"POST",body:JSON.stringify(data)});
+  alert("💾 Đã lưu nội dung");
+}
+
+function logoutAdmin(){
+  isAdmin=false;
+  document.querySelectorAll(".editable").forEach(e=>e.contentEditable=false);
+  editBtn.style.display=saveBtn.style.display=logoutBtn.style.display="none";
+}
+
+async function loadContent(){
+  const r=await fetch(SCRIPT_URL);
+  const d=await r.json();
+  document.querySelectorAll(".editable").forEach(e=>{
+    if(d[e.dataset.key]) e.innerHTML=d[e.dataset.key];
+  });
+}
+
+window.onload=loadContent;
+</script>
+
+</body>
+</html>
